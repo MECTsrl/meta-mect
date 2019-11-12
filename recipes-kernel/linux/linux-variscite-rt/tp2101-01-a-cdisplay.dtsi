@@ -1,0 +1,73 @@
+/*
+ * Copyright (C) 2015-2017 Variscite Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * Capacitive Display for VAR-SoloCustomBoard and VAR-DT6CustomBoard
+ */
+
+	&i2c3 {
+		touch: ft5x06_ts@38 {
+			compatible = "edt,edt-ft5x06";
+			reg = <0x38>;
+			touchscreen-size-x = <1280>;
+			touchscreen-size-y = <800>;
+			touchscreen-inverted-x;
+			touchscreen-inverted-y;
+		};
+	};
+
+	&ldb {
+		status = "okay";
+
+		lvds-channel@0 {
+			fsl,data-mapping = "spwg";
+			fsl,data-width = <24>;
+			crtc = "ipu1-di0";
+			primary;
+			status = "okay";
+
+			display-timings {
+				native-mode = <&timing0>;
+				timing0: hsd100pxn1 {
+					clock-frequency = <71100000>;
+					hactive = <1280>;
+					vactive = <800>;
+					hback-porch = <60>;
+					hfront-porch = <80>;
+					vback-porch = <10>;
+					vfront-porch = <10>;
+					hsync-len = <20>;
+					vsync-len = <3>;
+				};
+			};
+		};
+
+		lvds-channel@1 {
+			fsl,data-mapping = "spwg";
+			fsl,data-width = <24>;
+			crtc = "ipu1-di0";
+			status = "okay";
+
+			display-timings {
+				native-mode = <&timing1>;
+				timing1: hsd100pxn1 {
+					clock-frequency = <71100000>;
+					hactive = <1280>;
+					vactive = <800>;
+					hback-porch = <60>;
+					hfront-porch = <80>;
+					vback-porch = <10>;
+					vfront-porch = <10>;
+					hsync-len = <20>;
+					vsync-len = <3>;
+				};
+			};
+		};
+	};
+
+	&mxcfb1 {
+		interface_pix_fmt = "RGB24";
+};

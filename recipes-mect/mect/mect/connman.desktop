@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Connectio Manager
+Exec=sudo connman-properties
+Icon=computer
+Terminal=false
+Type=Application
+StartupNotify=false
+
+Name[en_GB]=connman.desktop

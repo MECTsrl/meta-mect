@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Start Application
+Comment=start hmi_only
+Exec=killall matchbox-desktop
+Icon=computer
+Terminal=false
+Type=Application
+StartupNotify=false
+
+Name[en_GB]=hmi_only.desktop

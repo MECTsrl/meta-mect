@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /etc/formfactor/config
+
+if [ "$HAVE_TOUCHSCREEN" = "1" ]; then
+    SHOWCURSOR="no"
+else
+    SHOWCURSOR="yes"
+fi
+
+exec matchbox-window-manager -theme Sato -use_cursor $SHOWCURSOR $@ &
+
+/etc/default/hmi_only.sh 

@@ -1,0 +1,2 @@
+complete -o nospace -C /unit_tests/memtool memtool
+alias ll="ls -l --time-style=long-iso"

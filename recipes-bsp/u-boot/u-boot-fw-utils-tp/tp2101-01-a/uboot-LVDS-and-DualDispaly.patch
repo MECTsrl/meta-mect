@@ -1,0 +1,48 @@
+diff --git a/board/variscite/mx6var_som/mx6var_som.c b/board/variscite/mx6var_som/mx6var_som.c
+index 45dbb8e0d8..006b8faefa 100644
+--- a/board/variscite/mx6var_som/mx6var_som.c
++++ b/board/variscite/mx6var_som/mx6var_som.c
+@@ -806,20 +806,20 @@ struct display_info_t const displays[] = {{
+ } }, {
+ 	.bus	= -1,
+ 	.addr	= 0,
+-	.pixfmt	= IPU_PIX_FMT_RGB666,
++	.pixfmt	= IPU_PIX_FMT_RGB24,
+ 	.detect	= detect_dart_vsc_display,
+ 	.enable	= lvds_enable_disable,
+ 	.mode	= {
+-		.name           = "VAR-WVGA",
++		.name           = "TP2101-01-A-LVDS",
+ 		.refresh        = 60,  /* optional */
+-		.xres           = 800,
+-		.yres           = 480,
+-		.pixclock       = MHZ2PS(50),
+-		.left_margin    = 40,
+-		.right_margin   = 40,
+-		.upper_margin   = 29,
+-		.lower_margin   = 13,
+-		.hsync_len      = 48,
++		.xres           = 1280,
++		.yres           = 800,
++		.pixclock       = 71100000,
++		.left_margin    = 10,
++		.right_margin   = 10,
++		.upper_margin   = 80,
++		.lower_margin   = 60,
++		.hsync_len      = 20,
+ 		.vsync_len      = 3,
+ 		.sync           = FB_SYNC_EXT,
+ 		.vmode          = FB_VMODE_NONINTERLACED
+diff --git a/include/configs/mx6var_som.h b/include/configs/mx6var_som.h
+index d4cc0eb1ad..574793a187 100644
+--- a/include/configs/mx6var_som.h
++++ b/include/configs/mx6var_som.h
+@@ -190,7 +190,7 @@
+ 	"videoargs=" \
+ 		"if hdmidet; then " \
+ 			"setenv bootargs ${bootargs} " \
+-				"video=mxcfb0:dev=hdmi,1920x1080M@60,if=RGB24; " \
++				"video=mxcfb0:dev=hdmi,1280x800M@60,if=RGB24; " \
+ 		"else " \
+ 			"setenv bootargs ${bootargs} " \
+ 				"video=mxcfb0:dev=ldb; " \
