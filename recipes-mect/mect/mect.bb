@@ -18,6 +18,7 @@ SRC_URI += " \
 	file://ovpn-mect-up.sh \
 	file://ovpn-mect-down.sh \
 	file://74displayErrorReboot.sh \
+	file://09-ilitek.rules \
 	"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
@@ -34,6 +35,7 @@ do_install () {
      install -d 	${D}${datadir}/applications/
      install -d 	${D}${sysconfdir}/X11/Xsession.d/
      install -d 	${D}${sbindir}/
+     install -d 	${D}${sysconfdir}/udev/rules.d/
 
      install -m 0755    ${WORKDIR}/rootfs_version       	${D}/
      install -m 0600    ${WORKDIR}/authorized_keys		${D}/home/root/.ssh/
@@ -50,6 +52,7 @@ do_install () {
      install -m 0755    ${WORKDIR}/ovpn-mect-up.sh	   	${D}${sbindir}/
      install -m 0755    ${WORKDIR}/ovpn-mect-down.sh	   	${D}${sbindir}/
      install -m 0755    ${WORKDIR}/74displayErrorReboot.sh   	${D}${sysconfdir}/X11/Xsession.d/
+     install -m 0755    ${WORKDIR}/09-ilitek.rules		${D}${sysconfdir}/udev/rules.d/
 }
 
 PACKAGES = "${PN}"
@@ -73,4 +76,5 @@ FILES_${PN} += "${sysconfdir}/serial.conf \
 		${sbindir}/ovpn-mect-up.sh \
 		${sbindir}/ovpn-mect-down.sh \
 		${sysconfdir}/X11/Xsession.d/74displayErrorReboot.sh \
+		${sysconfdir}/udev/rules.d/09-ilitek.rules \
 		"

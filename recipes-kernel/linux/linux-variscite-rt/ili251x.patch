@@ -1,0 +1,13 @@
+diff --git a/arch/arm/configs/imx_v7_var_defconfig b/arch/arm/configs/imx_v7_var_defconfig
+index fa086955dc2d..7dd68a536249 100644
+--- a/arch/arm/configs/imx_v7_var_defconfig
++++ b/arch/arm/configs/imx_v7_var_defconfig
+@@ -351,6 +351,7 @@ CONFIG_TOUCHSCREEN_MC13783=y
+ CONFIG_TOUCHSCREEN_TSC2007=y
+ CONFIG_TOUCHSCREEN_STMPE=y
+ CONFIG_TOUCHSCREEN_FTS=y
++CONFIG_HID_MULTITOUCH=y
+ CONFIG_INPUT_MISC=y
+ CONFIG_INPUT_MMA8450=y
+ CONFIG_INPUT_MPL3115=y
+

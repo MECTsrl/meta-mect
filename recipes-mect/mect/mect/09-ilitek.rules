@@ -1,0 +1,2 @@
+ACTION=="add", KERNEL=="0003:222A:0001.0002", SUBSYSTEM=="hid", DRIVER=="hid-generic", \
+RUN+="/bin/bash -c 'echo $kernel > /sys/bus/hid/drivers/hid-generic/unbind'"

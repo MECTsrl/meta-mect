@@ -5,6 +5,7 @@ SRC_URI += "file://tp2101-01-a.dtsi;subdir=git/arch/${ARCH}/boot/dts\
 	    https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/4.14/older/patch-4.14.78-rt47.patch.gz;name=rt-patch \
 	    file://tp2101-01-a.dtb;subdir=git/arch/${ARCH}/boot/dts\
 	    file://logo_linux_clut224.ppm \
+	    file://ili251x.patch \
 	"
 
 #SRC_URI[rt-patch.md5sum] = "6e86714997e190a45fb5b9c951d2c179"
